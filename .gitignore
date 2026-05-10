@@ -2,3 +2,9 @@
 .env.*
 !.env.example
 node_modules
+bun.lock
+dist/
+*.exe
+.DS_Store
+*.log
+
