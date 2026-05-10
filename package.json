@@ -4,11 +4,16 @@
   "private": true,
   "type": "module",
   "bin": {
-    "claude-haha": "./bin/claude-haha"
+    "claude-haha": "./bin/claude-haha",
+    "claude-haha.bat": "./bin/claude-haha.bat"
   },
   "scripts": {
     "claude-haha": "bun run ./bin/claude-haha",
-    "start": "bun run ./bin/claude-haha"
+    "start": "bun run ./bin/claude-haha",
+    "install:win": "bin\\install.bat",
+    "build": "bun run ./src/entrypoints/cli.tsx --build",
+    "typecheck": "bun tsc --noEmit",
+    "dev": "bun --watch ./bin/claude-haha"
   },
   "dependencies": {
     "@anthropic-ai/sandbox-runtime": "^0.0.44",
@@ -73,5 +78,16 @@
     "xss": "^1.0.15",
     "yaml": "^2.8.3",
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.0",
+    "typescript": "^5.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/claude-code-windows": "^1.0.0"
   }
 }
